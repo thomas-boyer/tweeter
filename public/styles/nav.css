@@ -1,0 +1,23 @@
+.flexContainer {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  padding: 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #00a087;
+  color: #e8fdff; }
+  nav img {
+    width: 80px;
+    height: 80px; }
+  nav .header {
+    margin: 20px 0 0 10px;
+    font-size: 200%; }

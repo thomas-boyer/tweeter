@@ -7,26 +7,49 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav CSS -->
+    <link rel="stylesheet" type="text/css" href="/styles/nav.css">
+
+    <!-- New-Tweet CSS -->
+    <link rel="stylesheet" type="text/css" href="/styles/new-tweet.css">
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Composer Char Counter JS -->
+    <script type="text/javascript" src="/scripts/composer-char-count.js"></script>
   </head>
 
   <body>
 
     <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
+    <nav id="nav-bar flexContainer">
+      <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <textarea name="text" id="tweet-input" placeholder="What are you humming about?"></textarea>
+          <div class="tweet-lower flexContainer">
+            <input type="submit" value="Tweet" class="flexItem submit">
+            <span class="counter flexItem">140</span>
+          </div>
+        </form>
+      </section>
+
     </main>
 
   </body>

@@ -1,0 +1,27 @@
+.new-tweet {
+  padding: 20px;
+  background-color: #eef3fb;
+  border: 1px solid #ccc;
+  border-radius: 10px; }
+  .new-tweet h2 {
+    margin: 0;
+    width: 100%;
+    font-size: 2rem;
+    border-bottom: 2px solid #666; }
+  .new-tweet textarea {
+    margin-top: 20px;
+    padding: 5px;
+    width: 100%;
+    font-size: 1.5rem; }
+  .new-tweet .tweet-lower {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .new-tweet .tweet-lower .submit {
+      margin-top: 2px; }
+    .new-tweet .tweet-lower .counter {
+      margin: 7px;
+      font-style: italic; }
+    .new-tweet .tweet-lower .invalid {
+      color: red;
+      text-decoration: line-through; }

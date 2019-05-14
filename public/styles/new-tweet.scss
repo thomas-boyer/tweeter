@@ -1,0 +1,42 @@
+.new-tweet {
+  padding: 20px;
+
+  background-color: #eef3fb;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  h2 {
+    margin: 0;
+    width: 100%;
+
+    font-size: 2rem;
+    border-bottom: 2px solid #666;
+  }
+
+  textarea {
+    margin-top: 20px;
+    padding: 5px;
+    width: 100%;
+
+    font-size: 1.5rem;
+  }
+
+  .tweet-lower {
+    justify-content: space-between;
+
+    .submit {
+      margin-top: 2px;
+    }
+
+    .counter {
+      margin: 7px;
+
+      font-style: italic;
+    }
+
+    .invalid {
+      color: red;
+      text-decoration: line-through;
+    }
+  }
+}

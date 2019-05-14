@@ -1,0 +1,25 @@
+.flexContainer {
+  justify-content: flex-start;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  padding: 0 2em;
+  display: flex;
+
+  background-color: #00a087;
+  color: #e8fdff;
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .header {
+    margin: 20px 0 0 10px;
+    font-size: 200%;
+  }
+}

@@ -4,36 +4,39 @@
  * Do not modify these two selectors, please
  */
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%; }
-
+  font-size: 62.5%;
+}
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /*
  * Global layout stuff
  */
+
 * {
-  font-family: 'Roboto Condensed', sans-serif; }
-  * .flexContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  .flexContainer {
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap; }
-  * body {
+    flex-flow: row nowrap;
+  }
+
+  body {
     margin: 0;
     color: #244751;
-    background-color: #eef3fb; }
-    * body main {
+    background-color: #eef3fb;
+
+    main {
       width: 450px;
       margin: 0 auto;
       padding: 50px 2em;
-      background-color: #fff; }
+
+      background-color: #fff;
+    }
+  }
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
