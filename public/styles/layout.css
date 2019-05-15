@@ -17,7 +17,7 @@ html {
  */
 * {
   font-family: 'Roboto Condensed', sans-serif; }
-  * .flexContainer {
+  * .flex-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -29,7 +29,7 @@ html {
     margin: 0;
     color: #244751;
     background-color: #eef3fb; }
-    * body main {
+    * body #main-container {
       width: 450px;
       margin: 0 auto;
       padding: 50px 2em;

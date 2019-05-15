@@ -1,0 +1,69 @@
+html {
+  font-size: 62.5%; }
+  html #tweets .tweet {
+    margin-top: 20px;
+    background-color: #eef3fb;
+    border: 1px solid #fff;
+    border-radius: 10px; }
+    html #tweets .tweet header {
+      height: 72px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #ced3db; }
+      html #tweets .tweet header img {
+        margin: 0 10px;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px; }
+      html #tweets .tweet header h2 {
+        display: inline;
+        font-size: 2rem; }
+      html #tweets .tweet header .handle {
+        position: absolute;
+        right: 10px;
+        font-size: 1.5rem; }
+    html #tweets .tweet main {
+      height: 100px;
+      padding: 10px;
+      font-size: 2rem;
+      border-bottom: 1px solid #cce; }
+    html #tweets .tweet footer {
+      margin: 15px 15px 0 15px;
+      height: 35px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      font-size: 1.5rem; }
+      html #tweets .tweet footer .icons {
+        margin-right: 5px;
+        display: none; }
+  html #tweets .tweet:hover {
+    border: 1px solid #555;
+    border-radius: 10px;
+    background-color: #e6eaf4; }
+    html #tweets .tweet:hover header {
+      border: 1px solid #bbb;
+      background-color: #b7c4c3; }
+    html #tweets .tweet:hover .icons {
+      display: block; }

@@ -1,10 +1,11 @@
-.flexContainer {
+.flex-container {
   justify-content: flex-start;
 }
 
 nav {
   position: sticky;
   top: 0;
+  z-index: 10;
   height: 80px;
   width: 100%;
   padding: 0 2em;
@@ -20,6 +21,6 @@ nav {
 
   .header {
     margin: 20px 0 0 10px;
-    font-size: 200%;
+    font-size: 3rem;
   }
 }

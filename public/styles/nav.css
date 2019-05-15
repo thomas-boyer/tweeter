@@ -1,4 +1,4 @@
-.flexContainer {
+.flex-container {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start; }
@@ -7,6 +7,7 @@ nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 10;
   height: 80px;
   width: 100%;
   padding: 0 2em;
@@ -20,4 +21,4 @@ nav {
     height: 80px; }
   nav .header {
     margin: 20px 0 0 10px;
-    font-size: 200%; }
+    font-size: 3rem; }
