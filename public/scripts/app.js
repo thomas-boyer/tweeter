@@ -1,35 +1,40 @@
 $(document).ready(function() {
 
-  function timeSince(millisecondsAgo)
+  function timeSince(milliseconds)
   {
+    //If message is less than 10 seconds old
+    if (milliseconds < 10000)
+    {
+      return "Just now";
+    }
     //If message is less than 1 minute old
-    if (millisecondsAgo < 60000)
+    else if (milliseconds < 60000)
     {
       //Convert relative time to seconds
-      return `${Math.floor(millisecondsAgo / 1000)} second${ millisecondsAgo < 2000 ? '' : 's'} ago`;
+      return `${Math.floor(milliseconds / 1000)} seconds ago`;
     }
     //If message is less than 1 hour old
-    else if (millisecondsAgo < 3600000)
+    else if (milliseconds < 3600000)
     {
       //Convert relative time to minutes
-      return `${Math.floor(millisecondsAgo / 60000)} minute${ millisecondsAgo < 120000 ? '' : 's'} ago`;
+      return `${Math.floor(milliseconds / 60000)} minute${ milliseconds < 120000 ? '' : 's'} ago`;
     }
     //if message is less than 1 day old
-    else if (millisecondsAgo < 86400000)
+    else if (milliseconds < 86400000)
     {
       //Convert relative time to hours
-      return `${Math.floor(millisecondsAgo / 3600000)} hour${ millisecondsAgo < 7200000 ? '' : 's'} ago`;
+      return `${Math.floor(milliseconds / 3600000)} hour${ milliseconds < 7200000 ? '' : 's'} ago`;
     }
     //if message is less than 1 year old
-    else if (millisecondsAgo < 31536000000)
+    else if (milliseconds < 31536000000)
     {
       //Convert relative time to days
-      return `${Math.floor(millisecondsAgo / 86400000)} day${ millisecondsAgo < 172800000 ? '' : 's'} ago`;
+      return `${Math.floor(milliseconds / 86400000)} day${ milliseconds < 172800000 ? '' : 's'} ago`;
     }
     else
     {
       //Convert relative time to years
-      return `${Math.floor(millisecondsAgo / 31536000000)} year${ millisecondsAgo < 63072000000 ? '' : 's'} ago`;
+      return `${Math.floor(milliseconds / 31536000000)} year${ milliseconds < 63072000000 ? '' : 's'} ago`;
     }
   }
 
@@ -43,7 +48,7 @@ $(document).ready(function() {
     $header.append(`<h2>${name}</h2>`);
     $header.append(`<span class="handle">${handle}</span>`);
 
-    const $main = $(`<main>${content.text}</main>`);
+    const $main = $("<main>").text(content.text);
 
     const $footer = $("<footer>").addClass("flex-container");
     $footer.append(`<span class="time">${timeSince(Date.now() - created_at)}</span>`);
@@ -57,58 +62,47 @@ $(document).ready(function() {
   {
     for (let tweet of tweets)
     {
-      $('#tweets').append(createTweetElement(tweet));
+      $('#tweets').prepend(createTweetElement(tweet));
     }
   }
 
-  // Fake data taken from tweets.json
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": {
-          "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-          "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-          "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-        },
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": {
-          "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-          "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-          "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-        },
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Johann von Goethe",
-        "avatars": {
-          "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-          "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-          "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-        },
-        "handle": "@johann49"
-      },
-      "content": {
-        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-      },
-      "created_at": 1461113796368
-    }
-  ];
+  function loadTweets()
+  {
+    $.ajax('/tweets', { method: 'GET' })
+    .then( (tweets) =>
+      {
+        renderTweets(tweets);
+      });
+  }
 
-  console.log(data);
-  renderTweets(data);
+  loadTweets();
+
+  $('#new-tweet-form').on('submit', function(e)
+    {
+      e.preventDefault();
+      if (!this[0].value)
+      {
+        alert("Error: No text has been entered.");
+      }
+      else if (this[0].value.length > 140)
+      {
+        alert("Error: Your tweet must be no longer than 140 characters.");
+      }
+      else
+      {
+        const data = $(this).serialize();
+        $.ajax('/tweets', { method: 'POST', data, success: function()
+          {
+            loadTweets();
+          }});
+      }
+    });
+
+$('#compose-button').on('click', function()
+  {
+    $('#new-tweet').slideToggle(100, function()
+      {
+        $('#tweet-input').focus();
+      });
+  });
 });

@@ -12,7 +12,10 @@
     margin-top: 20px;
     padding: 5px;
     width: 100%;
+    resize: none;
     font-size: 1.5rem; }
+  #new-tweet textarea:focus {
+    border: 2px solid #00a087; }
   #new-tweet .tweet-lower {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
