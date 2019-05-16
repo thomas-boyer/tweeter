@@ -1,5 +1,9 @@
+html {
+  font-size: 62.5%; }
+
 #new-tweet {
   padding: 20px;
+  display: none;
   background-color: #eef3fb;
   border: 1px solid #ccc;
   border-radius: 10px; }
@@ -27,3 +31,14 @@
       font-style: italic; }
     #new-tweet .tweet-lower .invalid {
       color: red; }
+  #new-tweet .error {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f55;
+    font-size: 1.8rem;
+    color: white;
+    border: 1px solid red;
+    border-radius: 5px; }
+    #new-tweet .error .bold {
+      font-weight: 700; }

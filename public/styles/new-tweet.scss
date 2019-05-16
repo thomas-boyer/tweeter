@@ -1,5 +1,10 @@
+html {
+  font-size: 62.5%;
+}
+
 #new-tweet {
   padding: 20px;
+  display: none;
 
   background-color: #eef3fb;
   border: 1px solid #ccc;
@@ -41,6 +46,22 @@
 
     .invalid {
       color: red;
+    }
+  }
+
+  .error {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+
+    background-color: #f55;
+    font-size: 1.8rem;
+    color: white;
+    border: 1px solid red;
+    border-radius: 5px;
+
+    .bold {
+      font-weight: 700;
     }
   }
 }

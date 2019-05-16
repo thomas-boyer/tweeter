@@ -80,16 +80,20 @@ $(document).ready(function() {
   $('#new-tweet-form').on('submit', function(e)
     {
       e.preventDefault();
+      $('#new-tweet .error').slideUp(100);
       if (!this[0].value)
       {
-        alert("Error: No text has been entered.");
+        $('#new-tweet .error').slideDown(100);
+        $('#new-tweet .error .message').text('No text has been entered.');
       }
       else if (this[0].value.length > 140)
       {
-        alert("Error: Your tweet must be no longer than 140 characters.");
+        $('#new-tweet .error').slideDown(100);
+        $('#new-tweet .error .message').text('Your tweet must be no longer than 140 characters.');
       }
       else
       {
+        $('#new-tweet .error').slideUp(100);
         const data = $(this).serialize();
         $.ajax('/tweets', { method: 'POST', data, success: function()
           {
