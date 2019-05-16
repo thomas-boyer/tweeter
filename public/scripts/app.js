@@ -93,7 +93,6 @@ $(document).ready(function() {
       }
       else
       {
-        $('#new-tweet .error').slideUp(100);
         const data = $(this).serialize();
         $.ajax('/tweets', { method: 'POST', data, success: function()
           {

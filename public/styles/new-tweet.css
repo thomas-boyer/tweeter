@@ -23,7 +23,8 @@ html {
   #new-tweet .tweet-lower {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: space-between;
+    font-size: 1.5rem; }
     #new-tweet .tweet-lower .submit {
       margin-top: 2px; }
     #new-tweet .tweet-lower .counter {
