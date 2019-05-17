@@ -27,18 +27,37 @@
       height: 50px;
     }
 
-    h2 {
-      display: inline;
+    .name {
+      max-width: 40%;
 
-      font-size: 2rem;
+      h2 {
+        display: inline;
+
+        font-size: 2rem;
+      }
     }
 
     .handle {
       position: absolute;
       right: 10px;
+      max-width: 40%;
 
       font-size: 1.5rem;
     }
+  }
+
+  .mobile-handle {
+    display: none;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5px;
+    width: 80%;
+    word-wrap: break-word;
+
+    background-color: white;
+    font-size: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
   }
 
   main {
@@ -51,7 +70,7 @@
 
   footer {
     margin: 15px 15px 0 15px;
-    height: 35px;
+    min-height: 35px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -61,6 +80,16 @@
     .icons {
       margin-right: 5px;
       display: none;
+      word-wrap: break-word;
+
+      i {
+        margin-left: 10px;
+
+        &:hover {
+          color: $accent-color-1;
+          cursor: pointer;
+        }
+      }
     }
   }
 }

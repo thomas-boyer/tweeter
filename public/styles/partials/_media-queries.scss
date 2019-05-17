@@ -1,0 +1,53 @@
+@media (min-width: 381px) {
+  #new-tweet-mobile-container {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  html {
+    body {
+      nav {
+        justify-content: center;
+
+        .compose-button {
+          display: none;
+        }
+      }
+
+      #main-container {
+
+        .compose-button {
+          display: flex;
+        }
+
+        #new-tweet-desktop-container {
+          display: none !important;
+        }
+
+        .tweet {
+          header {
+            justify-content: center;
+
+            .name {
+              max-width: 80%;
+            }
+
+            .handle {
+              display: none;
+            }
+          }
+          .mobile-handle {
+            display: flex;
+          }
+
+          footer {
+            .icons {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

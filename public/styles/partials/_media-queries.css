@@ -1,0 +1,31 @@
+@media (min-width: 381px) {
+  #new-tweet-mobile-container {
+    display: none !important; } }
+
+@media (max-width: 380px) {
+  html body nav {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    html body nav .compose-button {
+      display: none; }
+  html body #main-container .compose-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  html body #main-container #new-tweet-desktop-container {
+    display: none !important; }
+  html body #main-container .tweet header {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    html body #main-container .tweet header .name {
+      max-width: 80%; }
+    html body #main-container .tweet header .handle {
+      display: none; }
+  html body #main-container .tweet .mobile-handle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  html body #main-container .tweet footer .icons {
+    display: block; } }

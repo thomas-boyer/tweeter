@@ -1,8 +1,30 @@
 @import '../variables.scss';
 
-#new-tweet {
-  padding: 20px;
+#new-tweet-desktop-container {
+  @include new-tweet-container;
+  padding: 0 0 2rem 0;
+  top: 10rem;
+}
+
+#new-tweet-mobile-container {
+  @include new-tweet-container;
+  padding: 2rem 0;
+  top: 16rem;
+}
+
+.compose-button.mobile {
+  @include button(100%);
   display: none;
+  position: sticky;
+  top: 10rem;
+  z-index: 10;
+}
+
+.new-tweet {
+  padding: 20px;
+  position: sticky;
+  top: 20rem;
+  z-index: 10;
 
   background-color: $primary-color;
   border: 1px solid $border-color;
@@ -30,6 +52,7 @@
   }
 
   .tweet-lower {
+    display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
 

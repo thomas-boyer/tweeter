@@ -28,13 +28,29 @@
       border-radius: 10px;
       width: 50px;
       height: 50px; }
-    .tweet header h2 {
-      display: inline;
-      font-size: 2rem; }
+    .tweet header .name {
+      max-width: 40%; }
+      .tweet header .name h2 {
+        display: inline;
+        font-size: 2rem; }
     .tweet header .handle {
       position: absolute;
       right: 10px;
+      max-width: 40%;
       font-size: 1.5rem; }
+  .tweet .mobile-handle {
+    display: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5px;
+    width: 80%;
+    word-wrap: break-word;
+    background-color: white;
+    font-size: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    text-align: center; }
   .tweet main {
     min-height: 100px;
     padding: 10px;
@@ -42,7 +58,7 @@
     border-bottom: 1px solid #cce; }
   .tweet footer {
     margin: 15px 15px 0 15px;
-    height: 35px;
+    min-height: 35px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -56,7 +72,13 @@
     font-size: 1.5rem; }
     .tweet footer .icons {
       margin-right: 5px;
-      display: none; }
+      display: none;
+      word-wrap: break-word; }
+      .tweet footer .icons i {
+        margin-left: 10px; }
+        .tweet footer .icons i:hover {
+          color: #00a087;
+          cursor: pointer; }
 
 .tweet:hover {
   border: 1px solid #b3b3b3;

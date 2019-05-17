@@ -12,7 +12,15 @@ html {
     background-color: #eef3fb;
     font-family: 'Roboto Condensed', sans-serif; }
     html body #main-container {
-      width: 450px;
+      max-width: 450px;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 0 2rem 2rem 2rem;
       background-color: #fff; }
+      html body #main-container .whitespace {
+        width: 100%;
+        background: white;
+        height: 2rem;
+        z-index: 50;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 8rem; }

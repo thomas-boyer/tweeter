@@ -23,26 +23,26 @@ nav {
   nav .header {
     margin-left: 10px;
     font-size: 3rem; }
-  nav #compose-button {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  nav .compose-button {
+    width: 13rem;
+    height: 60px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    right: 2em;
-    width: 10%;
-    height: 60px;
     background: #eef3fb;
     border: 2px solid #244751;
     border-radius: 5px;
     color: #244751;
-    font-size: 2rem; }
-  nav #compose-button:hover {
-    cursor: pointer;
-    background: #006d5c;
-    color: #fff; }
+    font-size: 2rem;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    right: 2rem; }
+    nav .compose-button:hover {
+      cursor: pointer;
+      background: #006d5c;
+      color: #fff; }
