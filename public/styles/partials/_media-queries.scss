@@ -17,6 +17,10 @@
 
       #main-container {
 
+        .whitespace {
+          position: sticky;
+        }
+
         .compose-button {
           display: flex;
         }

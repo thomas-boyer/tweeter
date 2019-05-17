@@ -38,7 +38,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 10rem;
-  z-index: 10; }
+  z-index: 100; }
   .compose-button.mobile:hover {
     cursor: pointer;
     background: #006d5c;

@@ -21,6 +21,5 @@ html {
         background: white;
         height: 2rem;
         z-index: 50;
-        position: -webkit-sticky;
-        position: sticky;
+        position: static;
         top: 8rem; }
