@@ -8,11 +8,6 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
-  .flex-container {
-    display: flex;
-    flex-flow: row nowrap;
-  }
-
   body {
     margin: 0;
     color: $secondary-color;
