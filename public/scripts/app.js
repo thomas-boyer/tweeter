@@ -5,7 +5,7 @@ $(document).ready(function() {
     //If message is less than 10 seconds old
     if (milliseconds < 10000)
     {
-      return "Just now";
+      return 'Just now';
     }
     //If message is less than 1 minute old
     else if (milliseconds < 60000)
@@ -43,18 +43,18 @@ $(document).ready(function() {
     const { user, content, created_at } = tweetData;
     const { name, avatars, handle } = user;
 
-    const $header = $("<header>").addClass("flex-container");
-    $header.append(`<img src="${avatars.small}" alt="Avatar for user ${name}">`);
+    const $header = $('<header>').addClass('flex-container');
+    $header.append(`<img src='${avatars.small}' alt='Avatar for user ${name}'>`);
     $header.append(`<h2>${name}</h2>`);
-    $header.append(`<span class="handle">${handle}</span>`);
+    $header.append(`<span class='handle'>${handle}</span>`);
 
-    const $main = $("<main>").text(content.text);
+    const $main = $('<main>').text(content.text);
 
-    const $footer = $("<footer>").addClass("flex-container");
-    $footer.append(`<span class="time">${timeSince(Date.now() - created_at)}</span>`);
-    $footer.append(`<div class="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></div>`);
+    const $footer = $('<footer>').addClass('flex-container');
+    $footer.append(`<span class='time'>${timeSince(Date.now() - created_at)}</span>`);
+    $footer.append(`<div class='icons'><i class='fas fa-flag'></i><i class='fas fa-retweet'></i><i class='fas fa-heart'></i></div>`);
 
-    const $tweet = $("<article>").addClass("tweet").append($header).append($main).append($footer);
+    const $tweet = $('<article>').addClass('tweet').append($header).append($main).append($footer);
     return $tweet;
   }
 
@@ -94,6 +94,7 @@ $(document).ready(function() {
       else
       {
         const data = $(this).serialize();
+        $(this).children('textarea').val('');
         $.ajax('/tweets', { method: 'POST', data, success: function()
           {
             loadTweets();

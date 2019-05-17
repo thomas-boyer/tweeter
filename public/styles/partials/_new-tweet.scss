@@ -1,13 +1,11 @@
-html {
-  font-size: 62.5%;
-}
+@import '../variables.scss';
 
 #new-tweet {
   padding: 20px;
   display: none;
 
-  background-color: #eef3fb;
-  border: 1px solid #ccc;
+  background-color: $primary-color;
+  border: 1px solid $border-color;
   border-radius: 10px;
 
   h2 {
@@ -15,7 +13,7 @@ html {
     width: 100%;
 
     font-size: 2rem;
-    border-bottom: 2px solid #666;
+    border-bottom: 2px solid $border-color;
   }
 
   textarea {
@@ -28,7 +26,7 @@ html {
   }
 
   textarea:focus {
-    border: 2px solid #00a087;
+    border: 2px solid $accent-color-1;
   }
 
   .tweet-lower {

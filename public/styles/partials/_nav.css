@@ -16,7 +16,7 @@ nav {
   -ms-flex-align: center;
   align-items: center;
   background-color: #00a087;
-  color: #e8fdff; }
+  color: #eef3fb; }
   nav img {
     width: 80px;
     height: 80px; }
@@ -38,11 +38,11 @@ nav {
     width: 10%;
     height: 60px;
     background: #eef3fb;
-    border: 2px solid #408882;
+    border: 2px solid #244751;
     border-radius: 5px;
-    color: #408882;
+    color: #244751;
     font-size: 2rem; }
   nav #compose-button:hover {
     cursor: pointer;
-    background: #4ec3bb;
+    background: #006d5c;
     color: #fff; }
