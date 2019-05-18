@@ -30,7 +30,6 @@
 
   <body>
 
-    <!-- Top nav bar (fixed) -->
     <nav id="nav-bar flex-container">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
@@ -41,12 +40,13 @@
       <div class="whitespace-mobile lower"></div>
     </nav>
 
-    <!-- Page-specific (main) content here -->
     <main id="main-container">
       <div class="compose-button mobile flex-container">
         <i class="far fa-edit"></i>Compose
       </div>
-      <div id="new-tweet-mobile-container">
+
+      <!-- Mobile container for new-tweets box begins -->
+      <div id="new-tweet-mobile-container" class="container">
         <section class="new-tweet" class="hidden">
           <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets" class="new-tweet-form">
@@ -61,7 +61,10 @@
           </form>
         </section>
       </div>
-      <div id="new-tweet-desktop-container">
+      <!-- Mobile container for new-tweets box ends -->
+
+      <!-- Desktop container for new-tweets box begins -->
+      <div id="new-tweet-desktop-container" class="container">
         <div class="whitespace-desktop"></div>
         <section class="new-tweet" class="hidden">
           <h2>Compose Tweet</h2>
@@ -77,11 +80,11 @@
           </form>
         </section>
       </div>
+      <!-- Desktop container for new-tweets box ends -->
 
+      <!-- Tweets get populated by app.js -->
       <section id="tweets"></section>
 
-
     </main>
-
   </body>
 </html>

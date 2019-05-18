@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  //Calculate the time since a tweet was posted
   function timeSince(milliseconds)
   {
     //If message is less than 10 seconds old
@@ -40,9 +41,11 @@ $(document).ready(function() {
 
   function createTweetElement(tweetData)
   {
+    //Get tweet info from database
     const { user, content, created_at } = tweetData;
     const { name, avatars, handle } = user;
 
+    //Populate HTML elements with tweet info
     const $header = $('<header>').addClass('flex-container');
     $header.append(`<img src='${avatars.small}' alt='Avatar for user ${name}'>`);
     $header.append(`<div class='name'><h2>${name}</h2></div>`);
@@ -56,10 +59,12 @@ $(document).ready(function() {
     $footer.append(`<span class='time'>${timeSince(Date.now() - created_at)}</span>`);
     $footer.append(`<div class='icons'><i class='fas fa-flag'></i><i class='fas fa-retweet'></i><i class='fas fa-heart'></i></div>`);
 
+    //Combine all elements and return completed tweet
     const $tweet = $('<article>').addClass('tweet').append($header).append($mobileHandle).append($main).append($footer);
     return $tweet;
   }
 
+  //Combines tweets and loads them into tweets section
   function renderTweets(tweets)
   {
     for (let tweet of tweets)
@@ -68,6 +73,7 @@ $(document).ready(function() {
     }
   }
 
+  //Make GET request to server for tweets and then render them
   function loadTweets()
   {
     $.ajax('/tweets', { method: 'GET' })
@@ -79,20 +85,37 @@ $(document).ready(function() {
 
   loadTweets();
 
-  $('#new-tweet-mobile-container .new-tweet-form').on('submit', function(e)
+  //Submits tweet to server
+  $('.new-tweet-form').on('submit', function(e)
     {
       e.preventDefault();
-      $('#new-tweet-mobile-container .new-tweet .error').slideUp(300);
+
+      //Determine which new-tweet container the user is using
+      let container;
+      if ($(this).parent().parent().attr('id') === 'new-tweet-mobile-container')
+      {
+        container = '#new-tweet-mobile-container';
+      }
+      else if ($(this).parent().parent().attr('id') === 'new-tweet-desktop-container')
+      {
+        container = '#new-tweet-desktop-container';
+      }
+
+      //Slide error message up every time submit event is called
+      $(`${container} .new-tweet .error`).slideUp(300);
+
+      //Handle errors
       if (!this[0].value)
       {
-        $('#new-tweet-mobile-container .new-tweet .error').slideDown(300);
-        $('#new-tweet-mobile-container .new-tweet .error .message').text('No text has been entered.');
+        $(`${container} .new-tweet .error`).slideDown(300);
+        $(`${container} .new-tweet .error .message`).text('No text has been entered.');
       }
       else if (this[0].value.length > 140)
       {
-        $('#new-tweet-mobile-container .new-tweet .error').slideDown(300);
-        $('#new-tweet-mobile-container .new-tweet .error .message').text('Your tweet must be no longer than 140 characters.');
+        $(`${container} .new-tweet .error`).slideDown(300);
+        $(`${container} .new-tweet .error .message`).text('Your tweet must be no longer than 140 characters.');
       }
+      //If no errors, clear textbox, submit post request to server, and reload tweets
       else
       {
         const data = $(this).serialize();
@@ -104,47 +127,27 @@ $(document).ready(function() {
       }
     });
 
-  $('#new-tweet-desktop-container .new-tweet-form').on('submit', function(e)
+  //Opens new-tweet box
+  $('.compose-button').on('click', function()
     {
-      e.preventDefault();
-      $('#new-tweet-desktop-container .error').slideUp(300);
-      if (!this[0].value)
+      //Determine which new-tweet container the user will use
+      let container;
+      if ($(this).hasClass('desktop'))
       {
-        $('#new-tweet-desktop-container .error').slideDown(300);
-        $('#new-tweet-desktop-container .error .message').text('No text has been entered.');
+        container = '#new-tweet-desktop-container';
       }
-      else if (this[0].value.length > 140)
+      else if ($(this).hasClass('mobile'))
       {
-        $('#new-tweet-desktop-container .error').slideDown(300);
-        $('#new-tweet-desktop-container .error .message').text('Your tweet must be no longer than 140 characters.');
+        container = '#new-tweet-mobile-container';
       }
-      else
-      {
-        const data = $(this).serialize();
-        $(this).children('textarea').val('');
-        $.ajax('/tweets', { method: 'POST', data, success: function()
-          {
-            loadTweets();
-          }});
-      }
-    });
 
-  $('.desktop.compose-button').on('click', function()
-    {
-      $('#new-tweet-desktop-container').slideToggle(300, function()
+      //Open appropriate new-tweet box
+      $(`${container}`).slideToggle(300, function()
         {
-          console.log('hey');
-          $('#new-tweet-desktop-container .tweet-input').focus();
+          $(`${container} .tweet-input`).focus();
         });
     });
 
-  $('.mobile.compose-button').on('click', function()
-    {
-      $('#new-tweet-mobile-container').slideToggle(300, function()
-        {
-          $('#new-tweet-mobile-container .tweet-input').focus();
-        });
-    });
 });
 
 

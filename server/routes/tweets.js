@@ -7,24 +7,35 @@ const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
 
+  //Route for getting JSON of the existing tweets
   tweetsRoutes.get("/", function(req, res) {
-    DataHelpers.getTweets((err, tweets) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-      } else {
-        res.json(tweets);
-      }
-    });
+    DataHelpers.getTweets((err, tweets) =>
+      {
+        if (err)
+        {
+          res.status(500).json({ error: err.message });
+        }
+        else
+        {
+          res.json(tweets);
+        }
+      });
   });
 
-  tweetsRoutes.post("/", function(req, res) {
-    if (!req.body.text) {
+  //Route for posting tweets
+  tweetsRoutes.post("/", function(req, res)
+  {
+    if (!req.body.text)
+    {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
 
+    //Generate a random user if the user is not already specified
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
-    const tweet = {
+
+    const tweet =
+    {
       user: user,
       content: {
         text: req.body.text
@@ -32,15 +43,15 @@ module.exports = function(DataHelpers) {
       created_at: Date.now()
     };
 
-    DataHelpers.saveTweet(tweet, (err) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-      } else {
-        res.status(201).send();
-      }
-    });
+    DataHelpers.saveTweet(tweet, (err) =>
+      {
+        if (err) {
+          res.status(500).json({ error: err.message });
+        } else {
+          res.status(201).send();
+        }
+      });
   });
 
   return tweetsRoutes;
-
 }
