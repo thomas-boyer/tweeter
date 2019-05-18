@@ -30,4 +30,25 @@ nav {
     display: flex;
     right: 2rem;
   }
+
+  .whitespace-mobile.higher {
+    display: none;
+    width: 100%;
+    background: white;
+    height: 2rem;
+    z-index: 50;
+    position: absolute;
+    bottom: -2rem;
+  }
+
+  .whitespace-mobile.lower {
+    display: none;
+    width: calc(100% - 4rem);
+    background: white;
+    height: 2rem;
+    z-index: 50;
+    position: absolute;
+    bottom: -10rem;
+    border-bottom: 2px solid $border-color;
+  }
 }

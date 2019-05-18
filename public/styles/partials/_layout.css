@@ -14,12 +14,13 @@ html {
     html body #main-container {
       max-width: 450px;
       margin: 0 auto;
-      padding: 0 2rem 2rem 2rem;
+      padding: 2rem;
+      position: relative;
       background-color: #fff; }
-      html body #main-container .whitespace {
+      html body #main-container .whitespace-desktop {
         width: 100%;
         background: white;
         height: 2rem;
         z-index: 50;
-        position: static;
-        top: 8rem; }
+        position: absolute;
+        top: -2rem; }

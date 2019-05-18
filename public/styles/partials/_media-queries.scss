@@ -13,13 +13,13 @@
         .compose-button {
           display: none;
         }
+
+        .whitespace-mobile.higher, .whitespace-mobile.lower {
+          display: block;
+        }
       }
 
       #main-container {
-
-        .whitespace {
-          position: sticky;
-        }
 
         .compose-button {
           display: flex;

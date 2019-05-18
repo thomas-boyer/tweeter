@@ -9,9 +9,8 @@
     justify-content: center; }
     html body nav .compose-button {
       display: none; }
-  html body #main-container .whitespace {
-    position: -webkit-sticky;
-    position: sticky; }
+    html body nav .whitespace-mobile.higher, html body nav .whitespace-mobile.lower {
+      display: block; }
   html body #main-container .compose-button {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -82,15 +82,15 @@ $(document).ready(function() {
   $('#new-tweet-mobile-container .new-tweet-form').on('submit', function(e)
     {
       e.preventDefault();
-      $('#new-tweet-mobile-container .new-tweet .error').slideUp(100);
+      $('#new-tweet-mobile-container .new-tweet .error').slideUp(300);
       if (!this[0].value)
       {
-        $('#new-tweet-mobile-container .new-tweet .error').slideDown(100);
+        $('#new-tweet-mobile-container .new-tweet .error').slideDown(300);
         $('#new-tweet-mobile-container .new-tweet .error .message').text('No text has been entered.');
       }
       else if (this[0].value.length > 140)
       {
-        $('#new-tweet-mobile-container .new-tweet .error').slideDown(100);
+        $('#new-tweet-mobile-container .new-tweet .error').slideDown(300);
         $('#new-tweet-mobile-container .new-tweet .error .message').text('Your tweet must be no longer than 140 characters.');
       }
       else
@@ -107,15 +107,15 @@ $(document).ready(function() {
   $('#new-tweet-desktop-container .new-tweet-form').on('submit', function(e)
     {
       e.preventDefault();
-      $('#new-tweet-desktop-container .error').slideUp(100);
+      $('#new-tweet-desktop-container .error').slideUp(300);
       if (!this[0].value)
       {
-        $('#new-tweet-desktop-container .error').slideDown(100);
+        $('#new-tweet-desktop-container .error').slideDown(300);
         $('#new-tweet-desktop-container .error .message').text('No text has been entered.');
       }
       else if (this[0].value.length > 140)
       {
-        $('#new-tweet-desktop-container .error').slideDown(100);
+        $('#new-tweet-desktop-container .error').slideDown(300);
         $('#new-tweet-desktop-container .error .message').text('Your tweet must be no longer than 140 characters.');
       }
       else
@@ -131,7 +131,7 @@ $(document).ready(function() {
 
   $('.desktop.compose-button').on('click', function()
     {
-      $('#new-tweet-desktop-container').slideToggle(100, function()
+      $('#new-tweet-desktop-container').slideToggle(300, function()
         {
           console.log('hey');
           $('#new-tweet-desktop-container .tweet-input').focus();
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
   $('.mobile.compose-button').on('click', function()
     {
-      $('#new-tweet-mobile-container').slideToggle(100, function()
+      $('#new-tweet-mobile-container').slideToggle(300, function()
         {
           $('#new-tweet-mobile-container .tweet-input').focus();
         });

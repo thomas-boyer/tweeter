@@ -2,6 +2,11 @@
 
 .tweet {
   margin-top: 20px;
+
+  &:first-of-type {
+    margin-top: 40px;
+  }
+
   word-wrap: break-word;
 
   background-color: $primary-color;
