@@ -1,17 +1,11 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. It is available in unique mobile and desktop versions, and is responsive to all size screens. Users can post tweets and view tweets that have already been posted. Much like its predecessor, users cannot post tweets over 140 characters in length.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+---
 
-## Getting Started
+![Desktop-size screenshot of the main page](https://github.com/thomas-boyer/tweeter/blob/master/docs/index_desktop.png)
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+![Desktop-size screenshot of the new-tweet form](https://github.com/thomas-boyer/tweeter/blob/master/docs/new-tweet_desktop.png)
 
-## Dependencies
-
-- Express
-- Node 5.10.x or above
+![Mobile-size screenshot of the main page](https://github.com/thomas-boyer/tweeter/blob/master/docs/new-tweet_desktop.png)
